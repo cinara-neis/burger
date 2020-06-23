@@ -2,11 +2,13 @@ const router = require("express").Router();
 const burger = require("../models/burger");
 
 router.get("/", (req, res) => {
-    burger.all((data) => {
+    burger.selectAll().then((result) => {
         const burgerObj = {
-            burgers: data
+            burgers: result
         };
         console.log(burgerObj);
+        res.render("index", burgerObj);
+
     });
 });
 

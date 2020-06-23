@@ -1,0 +1,14 @@
+<h1>Eat A Burger!</h1>
+
+
+<ul>
+    {{#each burgers}}
+    <li>{{burger_name}} {{burger_devoured}}</li>
+    {{/each}}
+</ul>
+
+
+<form>
+    <input id="burgerInput" type="text" name="newBurger">
+    <button type="submit">Submit</button>
+</form>
