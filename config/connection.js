@@ -16,6 +16,24 @@ connection.connect((err) => {
     // console.log(`connected as id ${connection.threadId}`);
 });
 
+// const orm = {
+//     all: (table) => {
+//         return new Promise((resolve, reject) => {
+//             const queryString = "SELECT * FROM ??"
+//             connection.query(queryString, (table), (err, result) => {
+//                 if (err) {
+//                     reject(err);
+//                 }
+//                 resolve(result);
+//             });
+
+//         });
+//     }
+// }
+
+// orm.all("burgers").then((result) => {
+//     console.log(result);
+// });
 
 
 module.exports = connection;

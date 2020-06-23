@@ -26,3 +26,7 @@ app.use(routes);
 app.listen(PORT, () => {
     console.log(`Server now listening at http://localhost:${PORT}`);
 });
+
+// Sequence of creation of app? (linear/non-linear?)
+// Assuming setup instructions give basic outline of what file to begin working on first
+// connection -> orm -> model -> controller -> views-> public
