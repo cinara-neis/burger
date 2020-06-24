@@ -1,39 +1,18 @@
-const mysql = require("mysql");
+const Sequelize = require("sequelize");
 require("dotenv").config();
 
-const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
+const db = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        dialect: "mysql"
 
-connection.connect((err) => {
-    if (err) {
-        throw err;
     }
-    // console.log(`connected as id ${connection.threadId}`);
-});
-
-// const orm = {
-//     all: (table) => {
-//         return new Promise((resolve, reject) => {
-//             const queryString = "SELECT * FROM ??"
-//             connection.query(queryString, (table), (err, result) => {
-//                 if (err) {
-//                     reject(err);
-//                 }
-//                 resolve(result);
-//             });
-
-//         });
-//     }
-// }
-
-// orm.all("burgers").then((result) => {
-//     console.log(result);
-// });
+)
 
 
-module.exports = connection;
+
+module.exports = db;

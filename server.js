@@ -14,6 +14,7 @@ app.use(express.static("public"));
 // Handlebars Middleware
 const exphbs = require("express-handlebars");
 
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
