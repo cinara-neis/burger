@@ -1,20 +1,26 @@
-const Sequelize = require("sequelize");
-const db = require("../config/connection");
+
+const orm = require("../config/orm");
 
 
 
-const Burger = db.define("burger", {
-    burger_name: Sequelize.STRING,
-    devoured: Sequelize.BOOLEAN
-})
+const burger = {
+    selectAll: () => {
+        return new Promise((resolve, reject) => {
+            orm.selectAll("burgers").then((result) => {
+                resolve(result);
+            });
+        });
+    },
 
-Burger.sync({ force: true });
+    insert: (columns, values) => {
+        return new Promise((resolve, reject) => {
+            orm.insert("burgers", columns, values).then((result) => {
+                resolve(result);
+            });
+        });
+    }
+
+}
 
 
-
-
-
-
-
-
-module.exports = Burger;
+module.exports = burger; 

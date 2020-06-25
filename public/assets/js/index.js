@@ -26,6 +26,10 @@ $(document).ready(() => {
             // }, 1000);
             location.reload();
 
+        }).catch((err) => {
+            if (err) {
+                throw (err);
+            }
         });
 
 

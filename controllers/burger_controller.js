@@ -1,26 +1,24 @@
 const router = require("express").Router();
-const Burger = require("../models/burger");
+const burger = require("../models/burger");
 
 router.get("/", (req, res) => {
-    Burger.findAll().then((results) => {
+    burger.selectAll().then((results) => {
         const burgerObj = {
             burgers: results
         };
-        console.log(burgerObj);
+        // console.log(burgerObj);
         res.render("index", burgerObj);
 
     });
 });
 
 router.post("/api/burgers", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
 
-    Burger.create({
-        burger_name: req.body.burger_name,
-        devoured: req.body.devoured
-    }).then((results) => {
-        res.json(results);
-    });
+    burger.insert(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured]).then((result) => {
+        res.json(result);
+    })
+
 
 
 

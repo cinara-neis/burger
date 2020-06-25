@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 8080;
 
 
 // Express Middleware
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
 
 // Handlebars Middleware
 const exphbs = require("express-handlebars");
