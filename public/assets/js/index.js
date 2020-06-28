@@ -21,7 +21,24 @@ $(document).ready(() => {
 
     });
 
-    $(".create-form").on("submit", (event) => {
+    $(".throw-up").on("click", function (event) {
+        event.preventDefault();
+        let id = $(this).data("id");
+
+        console.log(id);
+
+        $.ajax(`/api/burgers/${id}`, {
+            type: "DELETE",
+            data: id
+        }).then((result) => {
+            console.log(`Deleted ${result}`);
+
+            location.reload();
+        })
+
+    });
+
+    $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
 

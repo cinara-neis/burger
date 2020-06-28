@@ -30,7 +30,13 @@ const burger = {
 
     },
 
-
+    delete: (id) => {
+        return new Promise((resolve, reject) => {
+            orm.delete("burgers", id).then((result) => {
+                resolve(result);
+            });
+        })
+    }
 
 }
 

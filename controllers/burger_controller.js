@@ -33,7 +33,11 @@ router.put("/api/burgers/:id", (req, res) => {
 });
 
 router.delete("/api/burgers/:id", (req, res) => {
+    const id = req.params.id;
 
+    burger.delete(id).then((result) => {
+        res.json(result);
+    });
 });
 
 module.exports = router;

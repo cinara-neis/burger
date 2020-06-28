@@ -22,7 +22,7 @@
                     {{#unless devoured}}
 
                     <li class="list-group-item" id="burger-item">
-                        {{this.id}} {{this.burger_name}}
+                        {{this.burger_name}}
 
                         <button data-id="{{id}}" class=" change-devoured btn btn-warning"
                             id="devour-button">Devour!</button>
@@ -43,7 +43,8 @@
                     {{#each burgers}}
                     {{#if devoured}}
 
-                    <li class="list-group-item" id="burger-item">{{this.burger_name}} </li>
+                    <li class="list-group-item" id="burger-item">{{this.burger_name}} <button data-id="{{id}}"
+                            class="throw-up btn btn-danger" id="delete-button">Eject</button></li>
 
 
                     {{/if}}
