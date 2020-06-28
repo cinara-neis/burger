@@ -18,16 +18,19 @@ const burger = {
                 resolve(result);
             });
         });
+
     },
 
     update: (id) => {
         return new Promise((resolve, reject) => {
-            orm.update("burgers", "devoured", true, id).then((result) => {
+            orm.update("burgers", "devoured", 1, id).then((result) => {
                 resolve(result);
             });
         });
 
-    }
+    },
+
+
 
 }
 

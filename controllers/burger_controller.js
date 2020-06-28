@@ -18,14 +18,22 @@ router.post("/api/burgers", (req, res) => {
     burger.insert(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured]).then((result) => {
         res.json(result);
     });
+
 });
 
 router.put("/api/burgers/:id", (req, res) => {
     const id = req.params.id;
+
+    console.log(id);
+
     burger.update(id).then((result) => {
         console.log(result);
-        res.json(result);
+        res.json(id);
     });
+});
+
+router.delete("/api/burgers/:id", (req, res) => {
+
 });
 
 module.exports = router;

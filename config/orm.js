@@ -27,17 +27,25 @@ const orm = {
 
     update: (table, column, value, id) => {
         return new Promise((resolve, reject) => {
-            const queryString = `UPDATE ${table} SET ${column}=${value} WHERE id=${id}`;
+            const queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
             console.log(queryString);
-            connection.query(queryString, (err, result) => {
+            connection.query(queryString, [table, column, value, id], (err, result) => {
                 if (err) {
                     reject(err);
                 }
                 console.log(result)
-                resolve(result)
+                resolve(result);
             });
         });
+    },
+
+    delete: (table, column, value) => {
+        return new Promise((resolve, reject) => {
+
+
+        });
     }
+
 }
 
 

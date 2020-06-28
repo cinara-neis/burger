@@ -84,6 +84,16 @@ margin-top: 50px;
     bottom: 1px;
     padding: 10px;
     font-size: 20px;
+    color:#ffffff;
+}
+
+#delete-button {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    bottom: 1px;
+    padding: 10px;
+    font-size: 20px;
 }
 
 #newBurger{

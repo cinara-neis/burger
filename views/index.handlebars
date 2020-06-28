@@ -7,27 +7,29 @@
 </div>
 
 
+
 <section>
     <div class="container">
         <div class="row">
 
-            <div class="col-md-5" id="not-devoured-box">
-                <h3>Burgers Not Devoured </h3>
 
+            <div class="col-md-5" id="not-devoured-box" type="button">
+                <h3>Burgers Not Devoured </h3>
                 <ul class="list-group">
+
 
                     {{#each burgers}}
                     {{#unless devoured}}
 
-                    <li class="list-group-item" id="burger-item">{{burger_name}} <button
-                            class="change-devoured btn btn-warning" id="devour-button" data-id="{{id}}">
-                            Devour!
-                        </button></li>
+                    <li class="list-group-item" id="burger-item">
+                        {{this.id}} {{this.burger_name}}
 
+                        <button data-id="{{id}}" class=" change-devoured btn btn-warning"
+                            id="devour-button">Devour!</button>
+
+                    </li>
                     {{/unless}}
                     {{/each}}
-
-
                 </ul>
             </div>
             <div class="col-md-2" id="space-box"></div>
@@ -41,7 +43,8 @@
                     {{#each burgers}}
                     {{#if devoured}}
 
-                    <li class="list-group-item" id="burger-item">{{burger_name}}</li>
+                    <li class="list-group-item" id="burger-item">{{this.burger_name}} </li>
+
 
                     {{/if}}
                     {{/each}}
@@ -73,7 +76,6 @@
         </div>
 
     </div>
-
 
 
 
