@@ -1,5 +1,4 @@
 
-
 $(document).ready(() => {
 
 
@@ -41,27 +40,32 @@ $(document).ready(() => {
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
+        let burgerInput = $("#newBurger").val().trim();
+        let devourSelect = $("[name=devoured]:checked").val().trim()
 
-        const newBurger = {
-            burger_name: $("#newBurger").val().trim(),
-            devoured: $("[name=devoured]:checked").val().trim()
-        }
-
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(() => {
-            console.log(newBurger);
-
-            location.reload();
-
-        }).catch((err) => {
-            if (err) {
-                throw (err);
+        if (burgerInput === "") {
+            $('#error-modal').modal('show');
+        } else {
+            const newBurger = {
+                burger_name: burgerInput,
+                devoured: devourSelect
             }
-        });
 
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then((result) => {
+                console.log(result);
 
+                location.reload();
+
+            }).catch((err) => {
+                if (err) {
+                    throw (err);
+                }
+            });
+
+        }
     });
 
 

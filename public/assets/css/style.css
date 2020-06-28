@@ -105,4 +105,13 @@ margin-top: 50px;
     text-align: center;
 }
 
+.modal-title {
+    color: red;
+}
+
+.modal-body {
+    text-align: center;
+    font-size: 20px;
+}
+
 
