@@ -1,6 +1,6 @@
 # Eat a Burger
 
-![badge](https://img.shields.io/badge/license-MIT-blue.svg)  ![badge](https://img.shields.io/badge/JavaScript-52%25-yellow) ![badge](https://img.shields.io/badge/HTML-34%25-red) ![badge](https://img.shields.io/badge/CSS-13%25-9cf) ![badge](https://img.shields.io/badge/TSQL-2%25-lightgrey) ![badge](https://img.shields.io/github/repo-size/gheptig/burger)
+![badge](https://img.shields.io/badge/license-MIT-blue.svg)  ![badge](https://img.shields.io/badge/JavaScript-52%25-yellow) ![badge](https://img.shields.io/badge/HTML-34%25-red) ![badge](https://img.shields.io/badge/CSS-13%25-9cf) ![badge](https://img.shields.io/badge/TSQL-1.5%25-lightgrey) ![badge](https://img.shields.io/github/repo-size/gheptig/burger)
 
 ## Heroku URL 
 
