@@ -1,6 +1,7 @@
 const connection = require("../config/connection");
 
 const orm = {
+    // RETURNS ALL DATA FROM TABLE IN MYSQL
     selectAll: (table) => {
         return new Promise((resolve, reject) => {
             const queryString = "SELECT * FROM ??";
@@ -13,6 +14,7 @@ const orm = {
         });
     },
 
+    // INSERTS NEW ROW IN TABLE OF DATABASE
     insert: (table, columns, values) => {
         return new Promise((resolve, reject) => {
             const queryString = "INSERT INTO ?? (??) VALUES (?)";
@@ -25,6 +27,7 @@ const orm = {
         });
     },
 
+    // UPDATE COLUMN VALUE BASED ON ID IN TABLE OF DATABASE
     update: (table, column, value, id) => {
         return new Promise((resolve, reject) => {
             const queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
@@ -39,6 +42,7 @@ const orm = {
         });
     },
 
+    // DELETE ROW FROM TABLE IN MYSQL DATABASE BASED ON ID
     delete: (table, value) => {
         return new Promise((resolve, reject) => {
             const queryString = "DELETE FROM ?? WHERE id = ?";

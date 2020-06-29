@@ -12,7 +12,7 @@ body {
     background-attachment: fixed;
 }
 
-
+/* STYLING FOR JUMBOTRON AREA */
 .jumbotron {
     background-color: rgba(69,1,1, .70);
     border-bottom: 8px solid #000;
@@ -36,6 +36,7 @@ font-size: 75px;
     max-height: 40%;
 }
 
+/* SECTION AND AREA TITLE STYLING */
 section {
     margin: 50px;
 }
@@ -46,15 +47,17 @@ h3 {
     font-family: 'Roboto', sans-serif;
     
 }
-
+/* AREA BOX STYLING */
 #not-devoured-box {
     background-color: rgba(236,53,33, .95);
     padding: 20px;
     border-radius: 5px;
 }
+
 #space-box {
 margin-top: 50px;
 }
+
 #devoured-box {
     background-color: rgba(50,199,4, .95);
     padding: 20px;
@@ -77,6 +80,7 @@ margin-top: 50px;
     font-size: 20px;
 }
 
+/* BUTTON STYLING */
 #devour-button {
     position: absolute;
     right: 0;
@@ -105,6 +109,7 @@ margin-top: 50px;
     text-align: center;
 }
 
+/* ERROR MODAL STYLING */
 .modal-title {
     color: red;
 }

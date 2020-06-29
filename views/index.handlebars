@@ -1,61 +1,49 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Eat a Burger!</h1>
-        <img class="img-fluid" id="burger-img" src="/assets/img/burger.png" alt="burgerpic">
-        <p class="lead">Select a burger to eat or make one on your own</p>
+<main>
+    {{!-- JUMBOTRON --}}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Eat a Burger!</h1>
+            <img class="img-fluid" id="burger-img" src="/assets/img/burger.png" alt="burgerpic">
+            <p class="lead">Select a burger to eat or make one on your own</p>
+        </div>
     </div>
-</div>
-
-
+</main>
 
 <section>
     <div class="container">
         <div class="row">
-
-
+            {{!-- NOT DEVOURED AREA --}}
             <div class="col-md-5" id="not-devoured-box" type="button">
                 <h3>Burgers Not Devoured </h3>
                 <ul class="list-group">
-
-
                     {{#each burgers}}
                     {{#unless devoured}}
-
                     <li class="list-group-item" id="burger-item">
                         {{this.burger_name}}
-
                         <button data-id="{{id}}" class=" change-devoured btn btn-warning"
                             id="devour-button">Devour!</button>
-
                     </li>
                     {{/unless}}
                     {{/each}}
                 </ul>
             </div>
+            {{!-- COLUMN SPACE --}}
             <div class="col-md-2" id="space-box"></div>
-
+            {{!-- DEVOURED AREA --}}
             <div class="col-md-5" id="devoured-box">
                 <h3>Burgers Devoured </h3>
-
-
                 <ul class="list-group">
-
                     {{#each burgers}}
                     {{#if devoured}}
-
                     <li class="list-group-item" id="burger-item">{{this.burger_name}} <button data-id="{{id}}"
                             class="throw-up btn btn-danger" id="delete-button">Eject</button></li>
-
-
                     {{/if}}
                     {{/each}}
-
-
                 </ul>
-
             </div>
         </div>
 
+        {{!-- ADD NEW BURGER AREA --}}
         <div class="row">
             <div class="col-md-8" id="add-box">
                 <h3>Add New Burger</h3>

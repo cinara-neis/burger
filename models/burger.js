@@ -4,6 +4,8 @@ const orm = require("../config/orm");
 
 
 const burger = {
+
+    // RETURN ALL BURGER DATA
     selectAll: () => {
         return new Promise((resolve, reject) => {
             orm.selectAll("burgers").then((result) => {
@@ -16,6 +18,7 @@ const burger = {
         });
     },
 
+    // INSERT NEW BURGER (set burger name and devoured status) 
     insert: (columns, values) => {
         return new Promise((resolve, reject) => {
             orm.insert("burgers", columns, values).then((result) => {
@@ -28,6 +31,7 @@ const burger = {
         });
     },
 
+    // UPDATE BURGER'S DEVOURED STATUS TO TRUE BASED ON ID
     update: (id) => {
         return new Promise((resolve, reject) => {
             orm.update("burgers", "devoured", 1, id).then((result) => {
@@ -41,6 +45,7 @@ const burger = {
 
     },
 
+    // DELETE BURGER BASED ON ID
     delete: (id) => {
         return new Promise((resolve, reject) => {
             orm.delete("burgers", id).then((result) => {

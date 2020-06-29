@@ -1,8 +1,7 @@
 
 $(document).ready(() => {
 
-
-
+    // On click of "Devour!" button to set burger devoured status to true
     $(".change-devoured").on("click", function (event) {
         event.preventDefault();
         let id = $(this).data("id");
@@ -20,6 +19,7 @@ $(document).ready(() => {
 
     });
 
+    // On click to delete burger from page (and database)
     $(".throw-up").on("click", function (event) {
         event.preventDefault();
         let id = $(this).data("id");
@@ -37,6 +37,7 @@ $(document).ready(() => {
 
     });
 
+    // Onclick to create and post new burger 
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
