@@ -2,14 +2,9 @@
 
 ## Brief Description
 
-Eat a Burger is a simple food log application that allows a user to keep a running tally of burgers they have either devoured or not devoured.  A user is presented an area titled "Add a Burger", where they enter a new burger name and either select "Devoured" (they have eaten the burger before) or not devoured (they have yet to eat the burger). If a user has yet to eat the burger it is then added to the "Burgers Not Devoured" area and the name is displayed with a button that says "Devour!" next to it.  When the user clicks the "Devour!" button the burger is then added to the "Burgers Devoured" area where the burger name is now displayed with an "Eject" button next to it.  If the user has devoured too many burgers they can then select the "Eject" button and the burger will be removed from the "Burgers Devoured" area.  Conversely, when a user selects "Devoured" when adding a new burger, it will be displayed in the "Burgers Devoured" area.
+Projeto API CRUD para estudos.
 
 
-This a responsive fullstack application that utilizes a Node.js backend using a RESTful API built with Express and a CRUD implemented MySQL database. The RESTful API makes requests to MySQL database and depending on the CRUD model a user is then rendered a Handlebars HTML template.
-
-## Preview 
-
-![burger-app](https://media.giphy.com/media/hWSY6nxTpJU2UJuz2K/giphy.gif)
 
 ## Technologies Used
 
@@ -23,15 +18,12 @@ This a responsive fullstack application that utilizes a Node.js backend using a 
 
 - [MySQL](https://www.npmjs.com/package/MySQL) - NPM package used to make connection with MySQL database.
 
-- [MySQL Workbench](https://www.mysql.com/products/workbench/) - MySQL GUI used to architect, test, and manage MySQL database.
-
 - [jQuery](https://jquery.com/) -  Used on frontend to simplify JavaScript code and DOM traversal.
 
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Used to style the html elements/application.
 
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - Grid/Column system used to create responsive page layout/structure.  Also used to create and style elements such as buttons, modals, and list-groups.
 
-- [Heroku](https://www.heroku.com/) - Used to host working application. (see app link above).
 
 
 ## Local Installation
@@ -40,7 +32,7 @@ This a responsive fullstack application that utilizes a Node.js backend using a 
 
 Finally, a user can launch the application by running `node server.js` in their terminal, and access the application at ```http://localhost:8080```
 
-## License
+## Licença
 
 MIT License
 
