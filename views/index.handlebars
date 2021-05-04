@@ -2,9 +2,9 @@
     {{!-- JUMBOTRON --}}
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Eat a Burger!</h1>
-            <img class="img-fluid" id="burger-img" src="/assets/img/burger.png" alt="burgerpic">
-            <p class="lead">Select a burger to eat or make one on your own</p>
+            <h1 class="display-4">Movie Hunter</h1>
+            <img class="img-fluid" id="images-jpg" src="/assets/img/images.jpg" alt="burgerpic">
+            <p class="lead">Escolha um filme para fazer sua avaliação!</p>
         </div>
     </div>
 </main>
@@ -14,58 +14,90 @@
         <div class="row">
             {{!-- NOT DEVOURED AREA --}}
             <div class="col-md-5" id="not-devoured-box" type="button">
-                <h3>Burgers Not Devoured </h3>
+                <h3>Lista de Filmes </h3>
                 <ul class="list-group">
                     {{#each burgers}}
                     {{#unless devoured}}
                     <li class="list-group-item" id="burger-item">
+                        <label>Nome:</label>
                         {{this.burger_name}}
-                        <button data-id="{{id}}" class=" change-devoured btn btn-warning"
-                            id="devour-button">Devour!</button>
+                        <br>
+                        <label>Genêro:</label>
+                        {{this.genero}}
+                        <br>
+                        <label>Ano:</label>
+                        {{this.ano}}
+                        <button data-id="{{id}}" class="change-devoured btn btn-warning"
+                                id="devour-button">BOM
+                        </button><br>
+                        <button data-id="{{id}}" class="change-devoured2 btn btn-warning"
+                                id="devour-button1">Ruim
+                        </button>
                     </li>
                     {{/unless}}
                     {{/each}}
                 </ul>
             </div>
+            
+            
             {{!-- COLUMN SPACE --}}
             <div class="col-md-2" id="space-box"></div>
             {{!-- DEVOURED AREA --}}
-            <div class="col-md-5" id="devoured-box">
-                <h3>Burgers Devoured </h3>
+            <div class="col-md-5" id="devoured-box" type="button">
+                <h3>Filmes avaliados *-* </h3>
                 <ul class="list-group">
                     {{#each burgers}}
                     {{#if devoured}}
                     <li class="list-group-item" id="burger-item">{{this.burger_name}} <button data-id="{{id}}"
-                            class="throw-up btn btn-danger" id="delete-button">Eject</button></li>
+                            class="throw-up btn btn-danger" id="delete-button">Apagar</button></li>
+                            <br>
+                        <label>Estrela:</label>
+                        {{this.ano}}
                     {{/if}}
                     {{/each}}
                 </ul>
             </div>
         </div>
 
-        {{!-- ADD NEW BURGER AREA --}}
         <div class="row">
             <div class="col-md-8" id="add-box">
-                <h3>Add New Burger</h3>
+                <h3>Adicionar filmes</h3>
                 <form class="create-form">
                     <div class="form-group">
-                        <label>Burger Name:</label>
+                        <label>Novo Filme:</label>
                         <input type="text" class="form-control" id="newBurger" name="name" placeholder="Krabby Patty">
+                        <label>Genero:</label>
+                        <input type="text" class="form-control" id="newGenero" name="name" placeholder="Ação">
+                        <label>Ano:</label>
+                        <input type="text" class="form-control" id="newAno" name="name" placeholder="1997">
                     </div>
-                    <div class="form-group form-check" id="devour-radio">
-                        <input type="radio" name="devoured" value="1" checked>
-                        <label>Devoured</label>
-                        <input type="radio" name="devoured" value="0">
-                        <label>Not Devoured</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit
-                        Burger</button>
+                    <br>
+                    <button type="submit" class="btn btn-outline-dark btn-lg btn-block">Submit
+                        Filmes</button>
                 </form>
             </div>
         </div>
 
     </div>
 </section>
+
+<!-- Modal -->
+{{!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Você Gostou do filme?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ruim" class="btn btn-secondary" data-bs-dismiss="modal">Ruim</button>
+                <button type="button" id="bom" class="btn btn-primary">Bom</button>
+            </div>
+        </div>
+    </div>
+</div> --}}
 
 {{!-- ERROR MODAL --}}
 <div class="modal fade" id="error-modal" tabindex="-1" role="dialog">
@@ -78,7 +110,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Please Enter a Burger!</p>
+                <p>Por favor digite um filme!</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn  btn-primary" data-dismiss="modal">Close</button>

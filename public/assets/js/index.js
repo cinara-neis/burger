@@ -1,6 +1,7 @@
 
 $(document).ready(() => {
 
+
     // On click of "Devour!" button to set burger devoured status to true
     $(".change-devoured").on("click", function (event) {
         event.preventDefault();
@@ -8,15 +9,28 @@ $(document).ready(() => {
 
         console.log(id);
 
+
         $.ajax(`/api/burgers/${id}`, {
             type: "PUT",
             data: id
         }).then((result) => {
             console.log(`burger devoured ${result}`);
-
             location.reload();
-        })
+    });
 
+    $(".change-devoured").on("click", function (event) {
+        event.preventDefault();
+        let id = $(this).data("id");
+
+        console.log(id);
+
+
+        $.ajax(`/api/burgers/${id}`, {
+            type: "PUT",
+            data: id
+        }).then((result) => {
+            console.log(`burger devoured ${result}`);
+            location.reload();
     });
 
     // On click to delete burger from page (and database)
@@ -42,14 +56,19 @@ $(document).ready(() => {
         event.preventDefault();
 
         let burgerInput = $("#newBurger").val().trim();
+        let generoInput = $("#newGenero").val().trim();
+        let anoInput = $("#newAno").val().trim();
         let devourSelect = $("[name=devoured]:checked").val().trim()
 
-        if (burgerInput === "") {
+        if (burgerInput === "" && 
+            generoInput === "") {
             $('#error-modal').modal('show');
         } else {
             const newBurger = {
                 burger_name: burgerInput,
-                devoured: devourSelect
+                devoured: devourSelect,
+                genero: generoInput,
+                ano: anoInput
             }
 
             $.ajax("/api/burgers", {
@@ -65,10 +84,6 @@ $(document).ready(() => {
                     throw (err);
                 }
             });
-
         }
     });
-
-
-
 });

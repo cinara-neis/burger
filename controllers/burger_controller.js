@@ -21,7 +21,8 @@ router.get("/", (req, res) => {
 router.post("/api/burgers", (req, res) => {
     // console.log(req.body);
 
-    burger.insert(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured]).then((result) => {
+    burger.insert(["burger_name", "devoured", "genero", "ano"],
+     [req.body.burger_name, req.body.devoured, req.body.genero, req.body.ano]).then((result) => {
         console.log(`Created new burger successfully`);
         res.json(result);
     }).catch((err) => {
